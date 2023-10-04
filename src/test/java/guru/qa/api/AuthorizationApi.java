@@ -8,7 +8,7 @@ import static io.restassured.http.ContentType.JSON;
 
 public class AuthorizationApi {
 
-    public LoginResponseModel login(CredentialsModel credentials){
+    public LoginResponseModel login(CredentialsModel credentials) {
         return given()
                 .body(credentials)
                 .contentType(JSON)

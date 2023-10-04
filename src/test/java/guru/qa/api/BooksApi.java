@@ -2,7 +2,6 @@ package guru.qa.api;
 
 import guru.qa.models.AddBooksListModel;
 import guru.qa.models.DeleteBookModel;
-import guru.qa.models.IsbnModel;
 import guru.qa.models.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
@@ -20,7 +19,7 @@ public class BooksApi {
                 .statusCode(204);
     }
 
-    public void addBook(LoginResponseModel loginResponse, AddBooksListModel booksList ) {
+    public void addBook(LoginResponseModel loginResponse, AddBooksListModel booksList) {
         given()
                 .contentType(JSON)
                 .header("Authorization", "Bearer " + loginResponse.getToken())
@@ -31,7 +30,7 @@ public class BooksApi {
                 .statusCode(201);
     }
 
-    public void deleteOneBook(LoginResponseModel loginResponse, DeleteBookModel deleteBookModel ) {
+    public void deleteOneBook(LoginResponseModel loginResponse, DeleteBookModel deleteBookModel) {
         given()
                 .contentType(JSON)
                 .header("Authorization", "Bearer " + loginResponse.getToken())

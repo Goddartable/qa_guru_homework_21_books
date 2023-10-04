@@ -34,11 +34,8 @@ public class DeleteBooksFromListTest extends TestBase {
         deleteBookModel.setUserId(loginResponse.getUserId());
 
         booksApi.deleteAllBooks(loginResponse);
-
         booksApi.addBook(loginResponse, booksList);
-
         booksApi.deleteOneBook(loginResponse, deleteBookModel);
-
 
         open("/favicon.ico");
         getWebDriver().manage().addCookie(new Cookie("userID", loginResponse.getUserId()));
